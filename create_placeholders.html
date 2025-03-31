@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Placeholders</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .placeholder {
+            width: 300px;
+            height: 200px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        .blue { background-color: #33658a; }
+        .dark-blue { background-color: #2f4858; }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Images for Download</h1>
+    <p>Right-click each colored box and select "Save image as..." to download the placeholder.</p>
+    
+    <div class="placeholder blue" id="ansia">Ansia da prestazione</div>
+    <div class="placeholder dark-blue" id="panico">Attacchi di panico</div>
+    <div class="placeholder blue" id="bulimia">Bulimia nervosa</div>
+    <div class="placeholder dark-blue" id="dipendenza">Dipendenza affettiva</div>
+    <div class="placeholder blue" id="lutto">Elaborazione del lutto</div>
+    <div class="placeholder dark-blue" id="bambini">Psicologia infantile</div>
+    
+    <script>
+        // Convert the divs to downloadable images
+        function convertToImage(element) {
+            const div = document.getElementById(element.id);
+            const svg = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+                    <rect width="300" height="200" fill="${element.classList.contains('blue') ? '#33658a' : '#2f4858'}"/>
+                    <text x="150" y="100" font-family="Arial" font-size="18" text-anchor="middle" fill="white">${element.textContent}</text>
+                </svg>
+            `;
+            const img = document.createElement('img');
+            img.src = 'data:image/svg+xml;base64,' + btoa(svg);
+            img.alt = element.textContent;
+            img.width = 300;
+            img.height = 200;
+            element.parentNode.replaceChild(img, element);
+            
+            // Add download link
+            const link = document.createElement('a');
+            link.href = img.src;
+            link.download = `${element.id}.jpg`;
+            link.textContent = `Download ${element.textContent}`;
+            link.style.display = 'block';
+            link.style.marginBottom = '20px';
+            img.parentNode.insertBefore(link, img.nextSibling);
+        }
+        
+        // Convert all placeholders to images
+        document.querySelectorAll('.placeholder').forEach(el => convertToImage(el));
+    </script>
+</body>
+</html>
+
