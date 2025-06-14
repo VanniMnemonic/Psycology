@@ -1,0 +1,21 @@
+testimonianze:
+  - nome: "Laura M."
+    eta: 28
+    citta: "Livorno"
+    testimonianza: "Grazie al supporto della Dott.ssa Monaco ho superato un periodo molto difficile della mia vita. La sua professionalità e empatia mi hanno aiutato a ritrovare fiducia in me stessa."
+    valutazione: 5
+    data: "2023-11-15"
+    
+  - nome: "Marco R."
+    eta: 35
+    citta: "Pisa"
+    testimonianza: "Il percorso di terapia di coppia con la Dott.ssa Monaco ha salvato il mio matrimonio. Ci ha insegnato a comunicare meglio e a comprendere le nostre dinamiche relazionali."
+    valutazione: 5
+    data: "2023-10-22"
+    
+  - nome: "Giulia S."
+    eta: 17
+    citta: "Livorno"
+    testimonianza: "Come adolescente ero molto chiusa e arrabbiata. La Dott.ssa Monaco mi ha aiutato a capire le mie emozioni e a gestire meglio i rapporti con i miei genitori. Ora mi sento molto più serena."
+    valutazione: 5
+    data: "2023-12-03"
