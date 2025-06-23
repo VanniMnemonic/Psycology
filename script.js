@@ -108,7 +108,8 @@ window.addEventListener("load", function () {
   document.body.classList.add("loaded");
 });
 
-// Navbar background on scroll (for mobile)
+// Navbar background on scroll (for mobile) - DISABILITATO
+/*
 let lastScrollTop = 0;
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
@@ -122,6 +123,7 @@ window.addEventListener("scroll", function () {
 
   lastScrollTop = scrollTop;
 });
+*/
 
 // Configurazione Google Maps (da personalizzare)
 function initMap() {
