@@ -208,7 +208,7 @@ body {
 }
 
 .hero-quote {
-  font-size: larger;
+  font-size: x-large;
   font-style: italic;
   color: #e91e63;
   background: rgba(255, 255, 255, 0.35);
@@ -599,10 +599,9 @@ body {
 /* Floating WhatsApp Button */
 .floating-whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   z-index: 1000;
-  animation: pulse 2s infinite;
 }
 
 .whatsapp-float-btn {
@@ -634,7 +633,8 @@ body {
   text-decoration: none;
 }
 
-/* Pulse animation for the floating button */
+/* Pulse animation for the floating button - Removed */
+/*
 @keyframes pulse {
   0% {
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
@@ -649,6 +649,7 @@ body {
       0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
+*/
 
 /* Indicatore di scroll per le slides */
 .scroll-indicator {
