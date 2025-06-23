@@ -16,7 +16,15 @@ body {
 .swiper {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+  background: linear-gradient(
+    -45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #96ceb4,
+    #feca57,
+    #ff9ff3
+  );
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
 }
@@ -116,15 +124,12 @@ body {
   height: 100%;
   background: url("images/sfondo.jpeg") center/cover;
   opacity: 0.4;
-  animation: float 24s ease-in-out infinite;
+  animation: float 24s ease-in-out;
 }
 
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px) scaleY(1.05);
-  }
-  50% {
     transform: translateY(-10px) scaleY(1.2);
   }
 }
@@ -196,13 +201,14 @@ body {
 
 .hero-text {
   font-size: clamp(1rem, 3vw, 1.3rem);
-  color: #555;
+  color: #333;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .hero-quote {
+  font-size: larger;
   font-style: italic;
   color: #e91e63;
   background: rgba(255, 255, 255, 0.35);
@@ -444,10 +450,11 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   border: 3px solid rgba(255, 255, 255, 0.6);
   width: 100%;
-  height: 100%; /* Aggiunto per uniformare l'altezza */
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 500px; /* Altezza minima uniforme */
 }
 
 .map-container {
@@ -455,17 +462,20 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%; /* Modificato da 300px a 100% */
+  height: 100%;
   background: rgba(255, 255, 255, 0.95);
   padding: 1rem;
   border: 3px solid rgba(255, 255, 255, 0.6);
+  min-height: 500px; /* Stessa altezza minima della contact-info */
+  display: flex;
+  flex-direction: column;
 }
 
 .map-container iframe {
   border-radius: 15px;
   width: 100%;
-  height: calc(100% - 2rem); /* Aggiustato per il padding del container */
-  min-height: 350px; /* Altezza minima per garantire usabilità */
+  flex: 1; /* Occupa tutto lo spazio disponibile */
+  min-height: 400px;
 }
 
 /* Aggiunta classe per uniformare le altezze delle colonne nella slide contatti */
@@ -476,6 +486,8 @@ body {
 
 .contatti-section .row > .col-lg-6 > div {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-item {
@@ -625,13 +637,16 @@ body {
 /* Pulse animation for the floating button */
 @keyframes pulse {
   0% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.7);
   }
   70% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 10px rgba(37, 211, 102, 0);
   }
   100% {
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
 
@@ -655,12 +670,21 @@ body {
 }
 
 @keyframes fadeInOut {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -683,34 +707,34 @@ body {
     padding: 2rem 0.5rem;
     padding-top: 5rem;
   }
-  
+
   .hero-quote {
     padding: 1rem;
     margin: 1rem auto 0;
     transform: rotate(0deg);
   }
-  
+
   .navbar-brand {
     font-size: 1.2rem;
   }
-  
+
   .nav-link {
     padding: 0.3rem 0.5rem;
     font-size: 0.9rem;
   }
-  
+
   .contact-info {
     padding: 1.5rem;
   }
-  
+
   .card-content {
     padding: 1rem;
   }
-  
+
   .testimonial-card {
     padding: 1.5rem;
   }
-  
+
   .testimonial-text {
     padding: 0.5rem 1rem;
   }
@@ -725,51 +749,51 @@ body {
   .testimonianze-section {
     padding-top: 5rem;
   }
-  
+
   .hero-title {
     margin-bottom: 1.5rem;
   }
-  
+
   .hero-quote {
     transform: rotate(0deg);
     margin: 1.5rem auto 0;
   }
-  
+
   .competenza-card {
     margin-bottom: 1.5rem;
   }
-  
+
   .vintage-photo {
     transform: rotate(0deg);
     margin-bottom: 2rem;
     border-width: 10px;
   }
-  
+
   .about-text {
     text-align: left;
   }
-  
+
   .contact-info {
     margin-bottom: 2rem;
   }
-  
+
   .social-link {
     width: 45px;
     height: 45px;
     font-size: 1.1rem;
     margin: 0 0.3rem;
   }
-  
+
   .map-container {
     height: 250px;
   }
-  
+
   .swiper-button-next,
   .swiper-button-prev {
     width: 45px;
     height: 45px;
   }
-  
+
   .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 16px;
@@ -781,7 +805,7 @@ body {
   .navbar {
     padding: 0.5rem;
   }
-  
+
   .hero-section,
   .about-section,
   .competenze-section,
@@ -790,11 +814,11 @@ body {
     padding: 1rem;
     padding-top: 5rem;
   }
-  
+
   .section-title {
     margin-bottom: 1.5rem;
   }
-  
+
   .vintage-photo {
     transform: rotate(0deg);
     margin-bottom: 2rem;
@@ -803,41 +827,56 @@ body {
     margin-right: auto;
     display: block;
   }
-  
+
   .about-text {
     text-align: left;
   }
-  
+
   .contact-info {
     margin-bottom: 2rem;
   }
-  
+
   .floating-whatsapp {
     bottom: 15px;
     right: 15px;
   }
-  
+
   .whatsapp-float-btn {
     width: 55px;
     height: 55px;
     font-size: 24px;
   }
-  
+
   .testimonial-card {
     margin-bottom: 20px;
   }
-  
+
   .testimonial-text::before,
   .testimonial-text::after {
     font-size: 2rem;
   }
-  
+
   .card-image {
     height: 180px;
   }
-  
+
   .competenza-card:hover {
     transform: translateY(-5px) scale(1.02);
+  }
+
+  .profilo-section {
+    padding: 1rem;
+    padding-top: 5rem;
+    align-items: flex-start;
+  }
+
+  .formazione-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .certificazioni-section {
+    padding: 1.5rem;
   }
 }
 
@@ -851,11 +890,11 @@ body {
     padding: 2rem;
     padding-top: 6rem;
   }
-  
+
   .contact-info {
     padding: 3rem;
   }
-  
+
   .testimonial-card {
     padding: 2.5rem;
   }
@@ -866,11 +905,11 @@ body {
   .container {
     max-width: 1140px;
   }
-  
+
   .hero-title {
     font-size: 4.5rem;
   }
-  
+
   .section-title {
     font-size: 3rem;
   }
@@ -894,12 +933,12 @@ body {
     padding: 2rem 1rem;
     padding-top: 5rem;
   }
-  
+
   .hero-title {
     font-size: clamp(1.5rem, 6vw, 3rem);
     margin-bottom: 1rem;
   }
-  
+
   .hero-quote {
     margin-top: 1rem;
     padding: 1rem;
@@ -920,16 +959,16 @@ body {
   .vintage-photo:hover {
     transform: none;
   }
-  
+
   .social-link:hover,
   .whatsapp-float-btn:hover {
     transform: none;
   }
-  
+
   .nav-link:hover {
     color: #ffffff !important;
   }
-  
+
   /* Migliore esperienza di scroll su touch */
   .swiper-slide {
     -webkit-overflow-scrolling: touch;
@@ -945,19 +984,19 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .hero-bg {
     animation: none;
   }
-  
+
   .swiper {
     animation: none;
   }
-  
+
   .floating-whatsapp {
     animation: none;
   }
-  
+
   .scroll-indicator {
     animation: none;
   }
@@ -972,7 +1011,7 @@ body {
   .scroll-indicator {
     display: none !important;
   }
-  
+
   .hero-section,
   .about-section,
   .competenze-section,
@@ -984,14 +1023,142 @@ body {
     min-height: auto;
     height: auto;
   }
-  
+
   .section-title,
   .hero-title {
     color: black !important;
   }
-  
+
   .swiper-slide {
     overflow: visible;
     height: auto;
+  }
+}
+
+/* Profilo Professionale Section - Aggiunta per centrare verticalmente */
+.profilo-section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #96ceb4 100%);
+  padding-top: 6rem; /* Spazio per la navbar */
+}
+
+.profilo-content {
+  width: 100%;
+}
+
+.formazione-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formazione-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.formazione-card h4 {
+  color: #e91e63;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(233, 30, 99, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.certificazioni-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.certificazioni-section h4 {
+  color: #e91e63;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(233, 30, 99, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.profilo-section .section-title {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profilo-section .lead {
+  color: #f8f9fa;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.profilo-section p {
+  color: #f8f9fa;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.6;
+}
+
+/* Responsive per le card contatti */
+@media (max-width: 992px) {
+  .contact-info,
+  .map-container {
+    min-height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .contatti-section .row > .col-lg-6 {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .map-container {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .map-container iframe {
+    min-height: 250px;
+  }
+
+  .profilo-section {
+    padding: 1rem;
+    padding-top: 5rem;
+    align-items: flex-start;
+  }
+
+  .formazione-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .certificazioni-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .profilo-section {
+    padding: 0.5rem;
+    padding-top: 5rem;
+  }
+
+  .formazione-card {
+    padding: 1rem;
+  }
+
+  .certificazioni-section {
+    padding: 1rem;
   }
 }
